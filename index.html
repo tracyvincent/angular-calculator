@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="Calculator">
+<head>
+    <title>Calculator</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <div ng-controller="MainController" ng-init="init()">
+      <div class="calculator">
+        <div id="display">{{displayValue}}</div>
+        <button class="btn" ng-click="number(7)">7</button>
+        <button class="btn" ng-click="number(8)">8</button>
+        <button class="btn" ng-click="number(9)">9</button>
+        <button class="btn" ng-click="equationOperator('/')">/</button>
+      </br>
+        <button class="btn" ng-click="number(4)">4</button>
+        <button class="btn" ng-click="number(5)">5</button>
+        <button class="btn" ng-click="number(6)">6</button>
+        <button class="btn" ng-click="equationOperator('*')">*</button>
+      </br>
+        <button class="btn" ng-click="number(1)">1</button>
+        <button class="btn" ng-click="number(2)">2</button>
+        <button class="btn" ng-click="number(3)">3</button>
+        <button class="btn" ng-click="equationOperator('-')">-</button>
+      </br>
+        <button class="btn" ng-click="number(0)">0</button>
+        <button class="btn" ng-click="number('.')">.</button>
+        <button class="btn" ng-click="equationOperator('+')">+</button>
+        <button class="btn" id="equals" ng-click="calculate()">=</button>
+      </br>
+        <button id="clear" ng-click="clear()">Clear</button>
+      </div>
+
+        <div>
+          <ul>
+            <li ng-repeat="equation in list">
+              {{equation}}
+            </li>
+          </ul>
+        </div>
+    </div>
+
+</body>
+</html>
